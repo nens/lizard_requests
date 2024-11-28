@@ -3,16 +3,19 @@ from typing import TypeAlias, Literal
 
 ScaleTypes: TypeAlias = Literal["nominal", "interval", "ordinal", "ratio"]
 
+
 class Organisation(BaseModel):
     url: str
     uuid: str
     name: str
+
 
 class Location(BaseModel):
     name: str
     code: str
     organisation: Organisation
     extra_metadata: dict
+
 
 class ObservationType(BaseModel):
     id: int | None = None
@@ -24,12 +27,13 @@ class ObservationType(BaseModel):
     reference_frame: str | None = None
     compartement: str | None = None
 
+
 class Timeseries(BaseModel):
     name: str
     code: str
     description: str = ""
-    start: str              # Zulutime YYYY-MM-DDTHH:MM:SSZ
-    end: str                # Zulutime YYYY-MM-DDTHH:MM:SSZ
+    start: str  # Zulutime YYYY-MM-DDTHH:MM:SSZ
+    end: str  # Zulutime YYYY-MM-DDTHH:MM:SSZ
     # value_type: str
     # last_value: str | float | None
     # interval: int
@@ -39,7 +43,7 @@ class Timeseries(BaseModel):
     supplier_code: str | None = None
     location: Location
     extra_metadata: dict = {}
-    
+
 
 class Event(BaseModel):
     time: str
