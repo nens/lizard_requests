@@ -14,7 +14,10 @@ class Location(BaseModel):
     name: str
     code: str
     organisation: Organisation
+    access_modifier: Literal["Common", "Public", "Private", "Hidden"] = "Public"
+    geometry: list | None = None
     extra_metadata: dict
+    ddsc_show_on_map: bool = True
 
 
 class ObservationType(BaseModel):
