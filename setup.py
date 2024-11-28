@@ -5,9 +5,7 @@ setup(
     name="lizard_requests",
     version="0.1",
     packages=find_packages(),
-    install_requires=[
-        "pydantic"
-    ],
+    install_requires=["pydantic", "requests"],
     author="Nelen & Schuurmans",
     author_email="servicedesk@nelen-schuurmans.com",
     description="A package to use the Lizard API.",
